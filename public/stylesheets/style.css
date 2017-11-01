@@ -1,0 +1,9 @@
+
+body { margin : 0px;}
+canvas { margin : 0px;}
+#cv{
+    width:860px;
+    height:645px;
+    float:left;
+    background-image:url('../image/blackboard.jpg');
+}

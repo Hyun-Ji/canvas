@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>캔버스</title>
+
+    <meta http-equiv='Content-Type' content='application/xhtml+xml; charset=utf-8'/>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="js/board.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!--
+    <script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script>
+    <script src ="https://rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
+    <script>
+        function save_image(){
+            // Dump the canvas contents to a file.
+            var canvas = document.getElementById("cv");
+            canvas.toBlob(function(blob) {
+                saveAs(blob, "output.png");
+            }, "image/png");
+        };
+    </script>--> <!--save image for png jQuery-->
+
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script>
+    --><!--save image for SVG jQuery, fabric.js-->
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+
+<canvas id = 'cv' width='860px;' height='645px;'></canvas>
+
+<div class = "menu">
+    <button id = 'load' onClick="svg_load();">get</button>
+    <button id = 'clear'>clear</button>
+    <button id = 'save' onClick="svg_save();">save</button>
+
+    <fieldset>
+        <legend>색상변경</legend>
+        <select id = 'pen_color'>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>두께</legend>
+        <select id = 'pen_width'>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>도구</legend>
+        <input type="radio" name ="tool" id='pen' value="pen" checked="on" onClick="tools(this.id);">펜<br>
+        <input type="radio" name ="tool" id='eraser' value="eraser" onClick="tools(this.id);">지우개<br>
+    </fieldset>
+</div>
+
+
+<div id="captions">
+<!--SVG카피된 그림 들어올 자리-->
+
+</div>
+
+</body>
+</html>
